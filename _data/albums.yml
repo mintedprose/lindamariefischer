@@ -1,0 +1,33 @@
+# One entry per album. Pages refer to these by id (album: "passages").
+- id: arc-of-love
+  blurb: "Relax and enjoy these adult contemporary songs. Light and easy rhythms."
+  title: Arc of Love
+  url: /music/arc-of-love
+  cover: /assets/img/cover-arc-of-love.jpg
+  lyrics: /arc-of-love-lyrics
+  notes: /arc-of-love-lyricist-notes
+  spotify: https://open.spotify.com/album/1iAmxMKulBX51LDh6W0STA
+  apple: https://itunes.apple.com/us/artist/linda-marie-fischer/1419792662
+  amazon: https://www.amazon.com/s?i=popular&rh=p_32%3ALinda+Marie+Fischer&ref=dp_byline_sr_music_1
+
+- id: passages
+  blurb: "Passages is a musical tribute to the many nuances of being a person, especially a female person."
+  title: Passages
+  url: /passages
+  cover: /assets/img/cover-passages.jpg
+  lyrics: /passages-lyrics
+  notes: /passages-lyricist-notes
+  spotify: https://open.spotify.com/album/7CKw3b57sdgelX382Jn3iU
+  apple: https://itunes.apple.com/us/artist/linda-marie-fischer/1419792662
+  amazon: https://www.amazon.com/s?i=popular&rh=p_32%3ALinda+Marie+Fischer&ref=dp_byline_sr_music_1
+
+- id: places
+  blurb: "Places is a musical tribute to all of the many great locations that have inspired me."
+  title: Places
+  url: /places
+  cover: /assets/img/cover-places.jpg
+  lyrics: /places-lyrics
+  notes: /places-lyricist-notes
+  spotify: https://open.spotify.com/album/3eEv45MMvyygN6sMi3CC1R
+  apple: https://itunes.apple.com/us/artist/linda-marie-fischer/1419792662
+  amazon: https://www.amazon.com/s?i=popular&rh=p_32%3ALinda+Marie+Fischer&ref=dp_byline_sr_music_1

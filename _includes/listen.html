@@ -1,0 +1,7 @@
+{% comment %}Streaming buttons. Pass album=<entry from site.data.albums>.{% endcomment %}
+<p class="listen-label">Listen on</p>
+<div class="btn-row">
+  <a class="btn btn--solid" href="{{ include.album.spotify }}">Spotify</a>
+  <a class="btn" href="{{ include.album.apple }}">Apple Music</a>
+  <a class="btn" href="{{ include.album.amazon }}">Amazon</a>
+</div>

@@ -1,0 +1,84 @@
+---
+layout: default
+title: Easy Listening & Electronic Dance Music
+description: "Music is the path. Notes are the steps out of isolation into resilience and the power of love. Albums Arc of Love, Passages and Places by Linda Marie Fischer."
+permalink: /
+body_class: home
+---
+<section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Traveling in song, grounded in love</p>
+        <h1>Resilience and the Power of Love</h1>
+        <p class="lede">Music is the path. Notes are the steps out of isolation into resilience and the power of love. My songs are an envelope of experiences, which listeners can open and enjoy, any hour, any day. I started with easy listening and then took a turn into electronic dance. Where it goes from here, we’ll all get to see.</p>
+        {% assign aol = site.data.albums | first %}
+        {% include listen.html album=aol %}
+      </div>
+      <div class="hero-art">
+        <img class="portrait" src="{{ site.baseurl }}/assets/img/portrait.jpg" alt="Linda Marie Fischer" width="1400" height="1936">
+        <img class="wreath" src="{{ site.baseurl }}/assets/img/wreath.png" alt="" aria-hidden="true">
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="wrap">
+      <blockquote>
+        <p>“A reverie of thoughts, feelings and dreams”</p>
+        <cite>Valerie Smaldone, Media Personality</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Music</p>
+          <h2>Albums</h2>
+        </div>
+      </div>
+      <div class="albums">
+        {% for album in site.data.albums %}
+        <article class="album">
+          <a class="cover" href="{{ site.baseurl }}{{ album.url }}"><img src="{{ site.baseurl }}{{ album.cover }}" alt="{{ album.title }} album cover" width="900" height="900" loading="lazy"></a>
+          <h3>{{ album.title }}</h3>
+          <p>{{ album.blurb }}</p>
+          <div class="links"><a class="link-arrow" href="{{ site.baseurl }}{{ album.url }}">Album</a><a class="link-arrow" href="{{ site.baseurl }}{{ album.lyrics }}">Lyrics</a></div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--wash">
+    <div class="wrap split">
+      <img class="split-art" src="{{ site.baseurl }}/assets/img/bouquet.png" alt="" width="582" height="448" loading="lazy">
+      <div>
+        <p class="eyebrow">My Story</p>
+        <h2>Roots Flourish</h2>
+        <p>In my roots are Sicilian musicians. I followed this tradition, singing and acting at a young age. But like many, life took its own turn. As I set off in new directions, I never let go of singing and it never let go of me. Finally the time was right to pursue music.</p>
+        <p style="margin-top:2rem"><a class="btn" href="{{ site.baseurl }}/story">My Story</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Blog</h2>
+        </div>
+        <a class="link-arrow" href="{{ site.baseurl }}/blog/">All posts</a>
+      </div>
+      <div class="posts">
+        {% for post in site.posts limit:3 %}
+        <a class="post-card" href="{{ site.baseurl }}{{ post.url }}">
+          <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          <h3>{{ post.title }}</h3>
+          <span class="link-arrow">Read</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

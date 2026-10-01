@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{% assign album = site.data.albums | where: "id", page.album | first %}
+<section class="album-hero">
+  <div class="wrap">
+    <img class="album-cover" src="{{ site.baseurl }}{{ album.cover }}" alt="{{ album.title }} album cover" width="900" height="900">
+    <div>
+      <p class="eyebrow">{{ page.eyebrow }}</p>
+      <h1>{{ page.heading | default: album.title }}</h1>
+      <nav class="album-tabs" aria-label="{{ album.title }}">
+        <a href="{{ site.baseurl }}{{ album.url }}" aria-current="page">Album</a>
+        <a href="{{ site.baseurl }}{{ album.lyrics }}">Lyrics</a>
+        <a href="{{ site.baseurl }}{{ album.notes }}">Songwriter Notes</a>
+      </nav>
+      {% include listen.html album=album %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--content">
+  <div class="wrap">
+    <div class="prose">
+{{ content }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--wash">
+  <div class="wrap">
+    <div class="section-head"><h2>More albums</h2></div>
+    <div class="albums albums--compact">
+      {% for other in site.data.albums %}{% if other.id != album.id %}
+      <article class="album">
+        <a class="cover" href="{{ site.baseurl }}{{ other.url }}"><img src="{{ site.baseurl }}{{ other.cover }}" alt="{{ other.title }} album cover" loading="lazy"></a>
+        <h3>{{ other.title }}</h3>
+        <div class="links"><a class="link-arrow" href="{{ site.baseurl }}{{ other.url }}">Album</a><a class="link-arrow" href="{{ site.baseurl }}{{ other.lyrics }}">Lyrics</a></div>
+      </article>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>

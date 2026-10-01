@@ -1,0 +1,30 @@
+---
+layout: default
+title: Blog
+heading: Blog
+description: "News, reviews, and the stories behind the songs from Linda Marie Fischer."
+permalink: /blog/
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">News &amp; Behind the Song</p>
+    <h1>Blog</h1>
+  </div>
+</section>
+
+<section class="section section--content">
+  <div class="wrap">
+    <div class="post-grid">
+      {% for post in site.posts %}
+      <a class="post-tile" href="{{ site.baseurl }}{{ post.url }}">
+        {% if post.image %}<span class="post-tile__img"><img src="{{ site.baseurl }}{{ post.image }}" alt="" loading="lazy"></span>{% endif %}
+        <span class="post-tile__body">
+          <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          <h2>{{ post.title }}</h2>
+          <span class="post-tile__excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</span>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

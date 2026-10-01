@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article>
+  <section class="page-hero page-hero--post">
+    <div class="wrap">
+      <p class="eyebrow"><a href="{{ site.baseurl }}/blog/">Blog</a> · <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+      <h1>{{ page.title }}</h1>
+    </div>
+  </section>
+
+  <section class="section section--content">
+    <div class="wrap">
+      <div class="prose">
+        {% if page.image and page.show_lead != false %}<figure class="figure figure--lead"><img src="{{ site.baseurl }}{{ page.image }}" alt=""></figure>{% endif %}
+{{ content }}
+        {% if page.tags.size > 0 %}
+        <ul class="tags">{% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+        {% endif %}
+        <p class="back"><a class="link-arrow" href="{{ site.baseurl }}/blog/">All posts</a></p>
+      </div>
+    </div>
+  </section>
+</article>

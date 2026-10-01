@@ -1,0 +1,40 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ site.baseurl }}/" aria-label="Linda Marie Fischer — home"><img src="{{ site.baseurl }}/assets/img/logo-name.png" alt="Linda Marie Fischer" width="700" height="113"></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li class="has-sub"><button aria-expanded="false">Albums</button>
+          <ul class="sub">
+            {% for album in site.data.albums %}<li><a href="{{ site.baseurl }}{{ album.url }}">{{ album.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li><a href="{{ site.baseurl }}/videos">Videos</a></li>
+        <li class="has-sub"><button aria-expanded="false">Lyrics</button>
+          <ul class="sub">
+            <li class="sub-label">Lyrics</li>
+            {% for album in site.data.albums %}<li><a href="{{ site.baseurl }}{{ album.lyrics }}">{{ album.title }}</a></li>
+            {% endfor %}
+            <li class="sub-label">Songwriter Notes</li>
+            {% for album in site.data.albums %}<li><a href="{{ site.baseurl }}{{ album.notes }}">{{ album.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li><a href="{{ site.baseurl }}/story">Story</a></li>
+        <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+        <li class="has-sub"><button aria-expanded="false">More</button>
+          <ul class="sub">
+            <li><a href="{{ site.baseurl }}/spotify">Spotify</a></li>
+            <li><a href="{{ site.baseurl }}/inspiration">Inspiration</a></li>
+            <li><a href="{{ site.baseurl }}/merch">Merch</a></li>
+            <li><a href="{{ site.baseurl }}/reviews">Reviews</a></li>
+            <li><a href="{{ site.baseurl }}/faq">FAQ</a></li>
+            <li><a href="{{ site.baseurl }}/media">Media</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,21 @@
+# Site settings — Linda Marie Fischer
+title: Linda Marie Fischer
+tagline: Traveling in song, grounded in love
+description: >-
+  Easy listening, adult contemporary and electronic dance music by
+  Linda Marie Fischer — albums Arc of Love, Passages and Places.
+url: https://www.lindamariefischer.com
+# Leave baseurl empty once the domain points here. While previewing at
+# https://<account>.github.io/<repo>/ set it to "/<repo>".
+baseurl: "/lindamariefischer"
+
+
+exclude:
+  - _build
+  - _source
+  - _shots
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - NOTES-FOR-AMEBA.md
+  - "LMF Website Proof*.pdf"
