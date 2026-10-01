@@ -324,3 +324,25 @@ h3 { font-size: 1.6rem; }
 .video-grid h3 { margin: 0; font-size: 1.5rem; }
 .video-grid p { font-size: .95rem; color: var(--ink-soft); }
 @media (max-width: 700px) { .prose .video-grid { grid-template-columns: 1fr; } }
+
+/* =========================================================
+   Page banners: full-width photo (or looping video) with the title over it
+   Set per page in front matter: banner, banner_pos, banner_video
+   ========================================================= */
+.page-banner { position: relative; overflow: hidden; display: flex; align-items: flex-end; min-height: clamp(320px, 38vw, 540px); background: #2b3a42 center / cover no-repeat; color: #fff; }
+.page-banner::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8, 24, 32, .10) 0%, rgba(8, 24, 32, .18) 40%, rgba(8, 24, 32, .62) 100%); }
+.page-banner__inner { position: relative; z-index: 2; width: min(var(--wrap), 100% - 2 * var(--gutter)); margin-inline: auto; padding-block: 3rem 2.6rem; text-align: center; }
+.page-banner h1 { color: #fff; margin: 0; text-shadow: 0 2px 20px rgba(0, 0, 0, .35); }
+.page-banner .eyebrow { color: #d5f1f8; text-shadow: 0 1px 8px rgba(0, 0, 0, .4); }
+.page-banner .album-tabs { justify-content: center; }
+.page-banner .album-tabs a { background: rgba(255, 255, 255, .92); border-color: transparent; }
+.banner-video { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.banner-video iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100%; transform: translate(-50%, -50%); border: 0; }
+@media (max-width: 700px) {
+  .page-banner { min-height: 280px; }
+  .banner-video { display: none; }   /* phones: show the still image instead of the video */
+}
+
+/* Album pages with a banner: cover + buttons sit just below it */
+.album-hero--under-banner .wrap { padding-block: clamp(2.5rem, 5vw, 3.5rem); }
+.album-hero__title { font-size: clamp(1.9rem, 3.5vw, 2.6rem); margin: 0 0 1rem; }

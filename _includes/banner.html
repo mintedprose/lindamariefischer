@@ -1,0 +1,20 @@
+{% comment %}
+  Full-width photo banner with the page title over it.
+  Front matter: banner (image path), banner_pos (CSS background-position, e.g. "50% 25%"),
+  banner_video (optional YouTube id, plays silently on a loop behind the title).
+  Pass album=<album> to show the Album / Lyrics / Songwriter Notes tabs.
+{% endcomment %}
+<section class="page-banner{% if page.banner_video %} page-banner--video{% endif %}" style="background-image: url('{{ site.baseurl }}{{ page.banner }}'); background-position: {{ page.banner_pos | default: 'center' }};">
+  {% if page.banner_video %}<div class="banner-video" aria-hidden="true"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.banner_video }}?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist={{ page.banner_video }}&amp;controls=0&amp;modestbranding=1&amp;playsinline=1&amp;rel=0" title="Background video" tabindex="-1" allow="autoplay; encrypted-media"></iframe></div>{% endif %}
+  <div class="wrap page-banner__inner">
+    {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {% if include.album %}
+    <nav class="album-tabs" aria-label="{{ include.album.title }}">
+      <a href="{{ site.baseurl }}{{ include.album.url }}">Album</a>
+      <a href="{{ site.baseurl }}{{ include.album.lyrics }}">Lyrics</a>
+      <a href="{{ site.baseurl }}{{ include.album.notes }}">Songwriter Notes</a>
+    </nav>
+    {% endif %}
+  </div>
+</section>

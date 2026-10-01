@@ -33,6 +33,8 @@ _build/              one-off migration scripts (ignore; see section 6)
 
 When you change the CSS or JS, **bump the `?v=` number** in `_includes/head.html` (CSS) or `_layouts/default.html` (JS) so browsers pick up the new file.
 
+**Page banners:** most pages open with a full-width photo banner (restored from the old site). It is set per page in the front matter: `banner` (image in `assets/img/banners/`), `banner_pos` (CSS background-position, used to keep faces in frame) and, on Videos, `banner_video` (a YouTube id that plays silently on a loop; phones get the still image). The markup is `_includes/banner.html`.
+
 ---
 
 ## 2. What we'd love from you

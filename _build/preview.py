@@ -242,8 +242,8 @@ def build(base=BASE):
     posts.sort(key=lambda p: p[0]['date'], reverse=True)
     site['posts'] = [p[0] for p in posts]
 
-    if os.path.exists(OUT): shutil.rmtree(OUT)
-    shutil.copytree(os.path.join(ROOT, 'assets'), os.path.join(OUT, 'assets'))
+    if os.path.exists(OUT): shutil.rmtree(OUT, ignore_errors=True)   # a folder Windows still has open is skipped
+    shutil.copytree(os.path.join(ROOT, 'assets'), os.path.join(OUT, 'assets'), dirs_exist_ok=True)
     layouts = {os.path.splitext(os.path.basename(f))[0]: read_doc(f) for f in glob.glob(os.path.join(ROOT, '_layouts', '*.html'))}
 
     built = []

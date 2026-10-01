@@ -2,6 +2,9 @@
 layout: default
 ---
 {% assign album = site.data.albums | where: "id", page.album | first %}
+{% if page.banner %}
+{% include banner.html album=album %}
+{% else %}
 <section class="page-hero">
   <div class="wrap">
     {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
@@ -15,6 +18,7 @@ layout: default
     {% endif %}
   </div>
 </section>
+{% endif %}
 
 <section class="section section--content">
   <div class="wrap">

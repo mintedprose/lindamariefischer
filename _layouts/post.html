@@ -12,7 +12,7 @@ layout: default
   <section class="section section--content">
     <div class="wrap">
       <div class="prose">
-        {% if page.image and page.show_lead != false %}<figure class="figure figure--lead"><img src="{{ site.baseurl }}{{ page.image }}" alt=""></figure>{% endif %}
+        {% if page.image and page.show_lead != false %}<figure class="figure figure--lead"><img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title | escape }}"></figure>{% endif %}
 {{ content }}
         {% if page.tags.size > 0 %}
         <ul class="tags">{% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
