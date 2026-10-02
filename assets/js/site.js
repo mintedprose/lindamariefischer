@@ -41,3 +41,23 @@ document.querySelectorAll('.video[data-yt] .video-thumb').forEach(function (a) {
     box.replaceChildren(f);
   });
 });
+
+// Background videos can't play from a file opened on this computer (YouTube "Error 153"),
+// so in the local test copy show the banner's still image instead.
+if (location.protocol === 'file:') {
+  document.querySelectorAll('.banner-video').forEach(function (v) { v.remove(); });
+}
+
+// Stay in Touch: send the form to the Google Sheet script without leaving the page
+document.querySelectorAll('.signup-form').forEach(function (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var thanks = form.nextElementSibling;
+    if (!form.getAttribute('action')) { alert('Sign-up isn’t connected yet. Please try again soon.'); return; }
+    var btn = form.querySelector('button');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch(form.action, { method: 'POST', body: new URLSearchParams(new FormData(form)), mode: 'no-cors' })
+      .then(function () { form.hidden = true; thanks.hidden = false; })
+      .catch(function () { btn.disabled = false; btn.textContent = 'Sign Up'; alert('Something went wrong. Please try again.'); });
+  });
+});

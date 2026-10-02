@@ -1,0 +1,16 @@
+{% comment %}
+  Stay in Touch sign-up form. Posts to the Google Apps Script in _config.yml (signup_url),
+  which adds a row to Linda's Google Sheet. "website" is a hidden spam trap for bots.
+{% endcomment %}
+<form class="signup-form" action="{{ site.signup_url }}" method="post">
+  <div class="signup-fields">
+    <label>First Name<input type="text" name="firstName" autocomplete="given-name" required></label>
+    <label>Last Name<input type="text" name="lastName" autocomplete="family-name" required></label>
+    <label class="signup-email">Email Address<input type="email" name="email" autocomplete="email" required></label>
+  </div>
+  <label class="signup-trap" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+  <input type="hidden" name="page" value="{{ page.url }}">
+  <button type="submit" class="btn btn--solid">Sign Up</button>
+  <p class="signup-note">I’ll never share your email. Unsubscribe anytime.</p>
+</form>
+<p class="signup-thanks" hidden><strong>Thank you!</strong> You’re on the list.</p>

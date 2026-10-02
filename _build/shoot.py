@@ -20,8 +20,9 @@ def shoot(page, width=1280, height=9000, phone=False):
         wrap = os.path.join(tempfile.gettempdir(), 'lmf_phone.html')
         open(wrap, 'w', encoding='utf-8').write(f'<body style="margin:0"><iframe src="{url}" style="width:375px;height:{height}px;border:0;display:block"></iframe></body>')
         url, width = 'file:///' + wrap.replace('\\', '/'), 500
+    if os.path.exists(out): os.remove(out)   # never show a stale screenshot
     subprocess.run([EDGE, '--headless=new', '--disable-gpu', '--hide-scrollbars', '--allow-file-access-from-files',
-                    '--user-data-dir=' + os.path.join(tempfile.gettempdir(), 'edgeshot'),
+                    '--user-data-dir=' + tempfile.mkdtemp(prefix='edgeshot-'),   # fresh profile = no stale cache
                     f'--window-size={width},{height}', '--virtual-time-budget=10000', '--screenshot=' + out, url],
                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=120)
     im = Image.open(out).convert('RGB')

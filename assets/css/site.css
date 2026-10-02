@@ -346,3 +346,74 @@ h3 { font-size: 1.6rem; }
 /* Album pages with a banner: cover + buttons sit just below it */
 .album-hero--under-banner .wrap { padding-block: clamp(2.5rem, 5vw, 3.5rem); }
 .album-hero__title { font-size: clamp(1.9rem, 3.5vw, 2.6rem); margin: 0 0 1rem; }
+
+/* Home hero: the plain photo, framed so the bottom edge falls on the shirt, not the neck */
+.hero-art { width: 42%; }
+.hero-art .portrait { object-position: 50% 14%; }
+.hero .wrap > div:first-child { max-width: 52%; }
+@media (max-width: 820px) {
+  .hero-art { width: 100vw; }
+  .hero-art .portrait { object-position: 50% 12%; }
+  .hero .wrap > div:first-child { max-width: none; }
+}
+
+/* Quote band: big blue quote marks around the quote (instead of small black ones) */
+.quote::before { content: none; }
+.quote p::before, .quote p::after { font: 400 2.4em/0 var(--serif); color: var(--teal); vertical-align: -0.38em; }
+.quote p::before { content: "\201C"; margin-right: .06em; }
+.quote p::after { content: "\201D"; margin-left: .04em; }
+
+/* Home hero: same height as the page banners on the other pages */
+.hero { min-height: clamp(320px, 38vw, 540px); }
+.hero .wrap { padding-block: clamp(2rem, 4vw, 3rem); }
+.hero h1 { font-size: clamp(2.4rem, 4.6vw, 3.9rem); }
+.hero p.lede { margin-bottom: 1.4rem; }
+@media (max-width: 820px) {
+  .hero-art { height: clamp(280px, 75vw, 420px); }
+}
+.hero h1 { max-width: 9.5em; }
+
+/* Home: full-width banner like the other pages: smiling close-up (white shirt),
+   face on the left, headline on the soft background to the right */
+.page-banner--home { background: url('../img/banners/img-0481-contact-whiten-2.jpg') no-repeat 50% 24% / cover; }
+.page-banner--home::after { content: none; }   /* photo only, no text, no shading */
+.page-banner--home .page-banner__inner { text-align: left; }
+.page-banner--home h1 { max-width: 9.5em; font-size: clamp(2.4rem, 5vw, 4.2rem); }
+.home-intro { padding-block: clamp(2.5rem, 5vw, 3.5rem); text-align: center; }
+.home-intro .lede { max-width: 40em; margin: 0 auto 1.6rem; font-size: 1.1rem; color: var(--ink-soft); }
+.home-intro .btn-row { justify-content: center; }
+@media (max-width: 700px) {
+  .page-banner--home { min-height: 420px; background-position: 50% 18%; }
+  .page-banner--home .page-banner__inner { text-align: center; }
+  .page-banner--home h1 { max-width: 8em; margin-inline: auto; }
+}
+
+.home-intro h1 { margin: 0 0 1rem; font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
+
+/* Album pages: photo-only banner; the album title (main headline) sits next to the cover */
+.page-banner--photo-only::after { background: linear-gradient(180deg, rgba(8,24,32,0) 60%, rgba(8,24,32,.18) 100%); }
+.album-hero__title { font-size: clamp(2.4rem, 4.6vw, 3.6rem); margin: 0 0 1.1rem; }
+
+/* Stay in Touch sign-up form (home band + /stay-in-touch page) */
+.signup-band { text-align: center; }
+.signup-band h2 { margin: 0 0 .5rem; }
+.signup-band .wrap > p { color: var(--ink-soft); margin: 0 0 1.6rem; }
+.signup-form { max-width: 40rem; margin: 0 auto; text-align: left; }
+.signup-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem; }
+.signup-fields label { display: flex; flex-direction: column; gap: .35rem; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.signup-fields .signup-email { grid-column: 1 / -1; }
+.signup-fields input { font: inherit; font-size: 1rem; letter-spacing: 0; text-transform: none; color: var(--ink); padding: .75em .9em; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.signup-fields input:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+.signup-form .btn { display: block; margin: 0 auto; cursor: pointer; }
+.signup-note { text-align: center; font-size: .85rem; color: var(--ink-soft); margin: .9rem 0 0; }
+.signup-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.signup-thanks { text-align: center; font-size: 1.15rem; padding: 1.2rem; }
+.prose .signup-form { margin: 1.6rem 0 0; }
+.prose .signup-form .btn, .prose .signup-note { margin-left: 0; text-align: left; }
+@media (max-width: 560px) { .signup-fields { grid-template-columns: 1fr; } }
+
+/* Lighter shading for pale photos (Contact) */
+.page-banner--light::after { background: linear-gradient(180deg, rgba(8,24,32,0) 0%, rgba(8,24,32,0) 50%, rgba(8,24,32,.45) 100%); }
+
+/* Last menu (Contact): sits under its label like the others, sized to its two short items */
+.nav > ul > li:last-child > .sub { min-width: 0; white-space: nowrap; }

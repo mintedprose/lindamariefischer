@@ -5,26 +5,21 @@ description: "Music is the path. Notes are the steps out of isolation into resil
 permalink: /
 body_class: home
 ---
-<section class="hero">
+<section class="page-banner page-banner--home" role="img" aria-label="Linda Marie Fischer"></section>
+
+  <section class="home-intro">
     <div class="wrap">
-      <div>
-        <p class="eyebrow">Traveling in song, grounded in love</p>
-        <h1>Resilience and the Power of Love</h1>
-        <p class="lede">Music is the path. Notes are the steps out of isolation into resilience and the power of love. My songs are an envelope of experiences, which listeners can open and enjoy, any hour, any day. I started with easy listening and then took a turn into electronic dance. Where it goes from here, we’ll all get to see.</p>
-        {% assign aol = site.data.albums | first %}
-        {% include listen.html album=aol %}
-      </div>
-      <div class="hero-art">
-        <img class="portrait" src="{{ site.baseurl }}/assets/img/portrait.jpg" alt="Linda Marie Fischer" width="1400" height="1936">
-        <img class="wreath" src="{{ site.baseurl }}/assets/img/wreath.png" alt="" aria-hidden="true">
-      </div>
+      <h1>Traveling in song, grounded in love</h1>
+      <p class="lede">Music is the path. Notes are the steps out of isolation into resilience and the power of love. My songs are an envelope of experiences, which listeners can open and enjoy, any hour, any day. I started with easy listening and then took a turn into electronic dance. Where it goes from here, we’ll all get to see.</p>
+      {% assign aol = site.data.albums | first %}
+      {% include listen.html album=aol %}
     </div>
   </section>
 
   <section class="quote">
     <div class="wrap">
       <blockquote>
-        <p>“A reverie of thoughts, feelings and dreams”</p>
+        <p>A reverie of thoughts, feelings and dreams</p>
         <cite>Valerie Smaldone, Media Personality</cite>
       </blockquote>
     </div>
@@ -34,7 +29,6 @@ body_class: home
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Music</p>
           <h2>Albums</h2>
         </div>
       </div>
@@ -55,7 +49,6 @@ body_class: home
     <div class="wrap split">
       <img class="split-art" src="{{ site.baseurl }}/assets/img/bouquet.png" alt="" width="582" height="448" loading="lazy">
       <div>
-        <p class="eyebrow">My Story</p>
         <h2>Roots Flourish</h2>
         <p>In my roots are Sicilian musicians. I followed this tradition, singing and acting at a young age. But like many, life took its own turn. As I set off in new directions, I never let go of singing and it never let go of me. Finally the time was right to pursue music.</p>
         <p style="margin-top:2rem"><a class="btn" href="{{ site.baseurl }}/story">My Story</a></p>
@@ -82,3 +75,12 @@ body_class: home
       </div>
     </div>
   </section>
+
+  <section class="section section--wash signup-band">
+    <div class="wrap">
+      <h2>Stay in Touch</h2>
+      <p>Be the first to hear about new music, videos and more.</p>
+      {% include signup-form.html %}
+    </div>
+  </section>
+

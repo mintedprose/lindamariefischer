@@ -91,3 +91,4 @@ While the domain still points at Squarespace, the site is previewed at `https://
 These are the scripts used to migrate the content out of Squarespace (`convert_pages.py`, `convert_blog.py`) and to make previews and the PDF proof on a machine without Ruby (`preview.py`, `shoot.py`, `make_pdf.py`). Jekyll ignores the folder, and you don't need any of it. Please don't re-run the converters, because they would overwrite edits.
 
 Thank you!
+

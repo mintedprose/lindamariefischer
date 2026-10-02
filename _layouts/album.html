@@ -2,13 +2,12 @@
 layout: default
 ---
 {% assign album = site.data.albums | where: "id", page.album | first %}
-{% if page.banner %}{% include banner.html %}{% endif %}
+{% if page.banner %}{% include banner.html notitle=true %}{% endif %}
 <section class="album-hero{% if page.banner %} album-hero--under-banner{% endif %}">
   <div class="wrap">
     <img class="album-cover" src="{{ site.baseurl }}{{ album.cover }}" alt="{{ album.title }} album cover" width="900" height="900">
     <div>
-      {% if page.banner %}<h2 class="album-hero__title">{{ album.title }}</h2>{% else %}<p class="eyebrow">{{ page.eyebrow }}</p>
-      <h1>{{ page.heading | default: album.title }}</h1>{% endif %}
+      {% if page.banner %}<h1 class="album-hero__title">{{ page.heading | default: album.title }}</h1>{% else %}<h1>{{ page.heading | default: album.title }}</h1>{% endif %}
       <nav class="album-tabs" aria-label="{{ album.title }}">
         <a href="{{ site.baseurl }}{{ album.url }}" aria-current="page">Album</a>
         <a href="{{ site.baseurl }}{{ album.lyrics }}">Lyrics</a>

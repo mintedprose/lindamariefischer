@@ -10,6 +10,10 @@ url: https://www.lindamariefischer.com
 baseurl: "/lindamariefischer"
 
 
+# Stay in Touch form: the Google Apps Script "web app" address (ends in /exec).
+# Sign-ups land in Linda's Google Sheet. Empty = form shows "not connected yet".
+signup_url: "https://script.google.com/macros/s/AKfycbymSQ6Fo03mrQBvCeWvi-7JgHgnOGDaTFCLDAXA3bqmASLRSvlIRibgT9cuxApLBY_d/exec"
+
 exclude:
   - _build
   - _source
