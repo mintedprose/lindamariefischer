@@ -84,7 +84,9 @@ def apply_filter(val, flt, ctx):
     if name == 'escape': return html.escape(str(val if val is not None else ''), quote=True)
     if name == 'date': return fmt_date(val, args[0])
     if name == 'date_to_xmlschema': d = to_date(val); return d.isoformat() if d else ''
-    if name == 'where': return [x for x in (val or []) if x.get(args[0]) == args[1]]
+    if name == 'where':
+        if args[1] is None: return list(val or [])   # Jekyll quirk: no value -> no filtering
+        return [x for x in (val or []) if x.get(args[0]) == args[1]]
     if name == 'first': return val[0] if val else None
     if name == 'last': return val[-1] if val else None
     if name == 'size': return len(val or [])

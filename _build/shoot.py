@@ -2,7 +2,7 @@
 
     python _build/shoot.py story videos blog/index   -> _shots/<name>.png
 """
-import os, sys, subprocess, tempfile
+import os, sys, subprocess, tempfile, time
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -13,7 +13,7 @@ os.makedirs(SHOTS, exist_ok=True)
 
 def shoot(page, width=1280, height=9000, phone=False):
     src = os.path.join(ROOT, '_site', *(page + '.html').split('/'))
-    url = 'file:///' + src.replace('\\', '/').replace(' ', '%20')
+    url = 'file:///' + src.replace('\\', '/').replace(' ', '%20') + '?t=' + str(int(time.time()))   # defeat browser cache
     name = page.replace('/', '__') + ('-phone' if phone else '')
     out = os.path.join(SHOTS, name + '.png')
     if phone:  # headless Edge won't go below ~490px, so frame the page at 375px

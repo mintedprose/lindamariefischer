@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign album = site.data.albums | where: "id", page.album | first %}
+{% if page.album %}{% assign album = site.data.albums | where: "id", page.album | first %}{% else %}{% assign album = nil %}{% endif %}
 {% if page.banner %}
 {% include banner.html album=album %}
 {% else %}
