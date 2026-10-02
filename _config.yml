@@ -7,7 +7,7 @@ description: >-
 url: https://www.lindamariefischer.com
 # Leave baseurl empty once the domain points here. While previewing at
 # https://<account>.github.io/<repo>/ set it to "/<repo>".
-baseurl: "/lindamariefischer"
+baseurl: ""
 
 
 # Stay in Touch form: the Google Apps Script "web app" address (ends in /exec).
