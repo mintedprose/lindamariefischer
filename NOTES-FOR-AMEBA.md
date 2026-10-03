@@ -92,3 +92,8 @@ These are the scripts used to migrate the content out of Squarespace (`convert_p
 
 Thank you!
 
+
+## Phone menu (fixed 2026-10-03)
+The sticky header uses a frosted-glass blur (`backdrop-filter`). On small screens that blur traps the
+fixed-position menu inside the 76px header bar, so only the first item showed. In the `max-width: 960px`
+rule, `.site-header` turns the blur off (`backdrop-filter: none`, solid white). Keep that if you restyle the header.
