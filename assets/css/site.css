@@ -121,6 +121,8 @@ h3 { font-size: 1.6rem; }
     transform: translateX(100%); transition: transform .25s;
   }
   .nav.open { transform: none; }
+  /* the header's blur effect would trap the fixed menu inside the 76px header bar */
+  .site-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: #fff; }
   .nav > ul { flex-direction: column; }
   .nav > ul > li { border-bottom: 1px solid var(--line); }
   .nav a, .nav button { padding: 1rem 0; font-size: .95rem; width: 100%; text-align: left; }
